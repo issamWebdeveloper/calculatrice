@@ -1,22 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, input, signal, computed, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-bouton',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './bouton.component.html',
   styleUrls: ['./bouton.component.css']
 })
 export class BoutonComponent implements OnInit {
-  heigh: number = 30;
-  width: number = 30;
-  content: string;
-  @Input() value: string;
-  @Input() working: boolean = false;
-  @Input() theType: string;
-  
-  constructor() {  }
+  heigh = signal(30);
+  width = signal(30);
+
+  value = input.required<string>();
+  working = input<boolean>(false);
+  theType = input<string>();
+
+  content = computed(() => this.value().toString());
+
+  constructor() { }
 
   ngOnInit() {
-    this.content = this.value.toString();
   }
-
 }

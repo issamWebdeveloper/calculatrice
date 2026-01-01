@@ -1,25 +1,52 @@
-
-  <div class="row justify-content-md-center">
-    <app-bouton *ngFor="let n of ['Rad', 'Deg', 'x!', '(',')','%','CE']" [value]="n"></app-bouton>
-  </div>
-  <div class="row justify-content-md-center">
-    <app-bouton *ngFor="let n of ['Inv', 'sin', 'ln']" [value]="n"></app-bouton>
-    <app-bouton theType="number" *ngFor="let n of ['7','8','9']" [value]="n"></app-bouton>
-    <app-bouton *ngFor="let n of ['÷']" [value]="n"></app-bouton>
-  </div>
-  <div class="row justify-content-md-center">
-    <app-bouton *ngFor="let n of ['π', 'cos', 'log']" [value]="n"></app-bouton>
-    <app-bouton theType="number" *ngFor="let n of ['4','5','6']" [value]="n"></app-bouton>
-    <app-bouton *ngFor="let n of ['×']" [value]="n"></app-bouton>
-  </div>
-  <div class="row justify-content-md-center">
-    <app-bouton *ngFor="let n of ['e', 'tan', '√']" [value]="n"></app-bouton>
-    <app-bouton theType="number" *ngFor="let n of ['1','2','3']" [value]="n"></app-bouton>
-    <app-bouton *ngFor="let n of ['−']" [value]="n"></app-bouton>
-  </div>
-  <div class="row justify-content-md-center">
-    <app-bouton *ngFor="let n of ['Ans', 'EXP', 'x']" [value]="n"></app-bouton>
-    <app-bouton theType="number" *ngFor="let n of ['0','.']" [value]="n"></app-bouton>
-    <app-bouton theType="egal" *ngFor="let n of ['=']" [value]="n"></app-bouton>
-    <app-bouton *ngFor="let n of ['+']" [value]="n"></app-bouton>
-  </div>
+<div class="row justify-content-md-center">
+  @for (n of ['Rad', 'Deg', 'x!', '(',')','%','CE']; track n) {
+  <app-bouton [value]="n"></app-bouton>
+  }
+</div>
+<div class="row justify-content-md-center">
+  @for (n of ['Inv', 'sin', 'ln']; track n) {
+  <app-bouton [value]="n"></app-bouton>
+  }
+  @for (n of ['7','8','9']; track n) {
+  <app-bouton theType="number" [value]="n"></app-bouton>
+  }
+  @for (n of ['÷']; track n) {
+  <app-bouton [value]="n"></app-bouton>
+  }
+</div>
+<div class="row justify-content-md-center">
+  @for (n of ['π', 'cos', 'log']; track n) {
+  <app-bouton [value]="n"></app-bouton>
+  }
+  @for (n of ['4','5','6']; track n) {
+  <app-bouton theType="number" [value]="n"></app-bouton>
+  }
+  @for (n of ['×']; track n) {
+  <app-bouton [value]="n"></app-bouton>
+  }
+</div>
+<div class="row justify-content-md-center">
+  @for (n of ['e', 'tan', '√']; track n) {
+  <app-bouton [value]="n"></app-bouton>
+  }
+  @for (n of ['1','2','3']; track n) {
+  <app-bouton theType="number" [value]="n"></app-bouton>
+  }
+  @for (n of ['−']; track n) {
+  <app-bouton [value]="n"></app-bouton>
+  }
+</div>
+<div class="row justify-content-md-center">
+  @for (n of ['Ans', 'EXP', 'x']; track n) {
+  <app-bouton [value]="n"></app-bouton>
+  }
+  @for (n of ['0','.']; track n) {
+  <app-bouton theType="number" [value]="n"></app-bouton>
+  }
+  @for (n of ['=']; track n) {
+  <app-bouton theType="egal" [value]="n"></app-bouton>
+  }
+  @for (n of ['+']; track n) {
+  <app-bouton [value]="n"></app-bouton>
+  }
+</div>
